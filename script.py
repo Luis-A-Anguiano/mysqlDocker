@@ -36,3 +36,4 @@ for x in myresult:
 
 
 mycursor.close()
+mydb.close
