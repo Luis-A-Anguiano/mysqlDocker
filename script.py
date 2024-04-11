@@ -1,11 +1,10 @@
 import mysql.connector
 
 mydb = mysql.connector.connect(
-  host="127.0.0.1",
+  host="mysqldb",
   user="root",
   password="mysql123",
-  database="test1",
-  port="3310"
+  database="db_test"
 )
 
 print(mydb)
@@ -17,23 +16,12 @@ for x in mycursor:
 print()
 
 print("Empleados")
-mycursor.execute("SELECT * FROM Empleado")
+mycursor.execute("SELECT * FROM empleado")
 
 myresult = mycursor.fetchall()
 
 for x in myresult:
  print(x)
-
-print()
-
-print("Clientes")
-mycursor.execute("SELECT * FROM Cliente")
-
-myresult = mycursor.fetchall()
-
-for x in myresult:
- print(x)
-
 
 mycursor.close()
 mydb.close
